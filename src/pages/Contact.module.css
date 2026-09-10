@@ -10,7 +10,8 @@
   padding-top: 140px; /* Account for navbar */
   padding-bottom: var(--space-32);
   display: flex;
-  align-items: flex-start; /* Move up slightly */
+  align-items: center; 
+  justify-content: center;
 }
 
 .container {

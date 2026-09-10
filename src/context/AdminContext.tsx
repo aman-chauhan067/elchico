@@ -22,7 +22,7 @@ export const AdminProvider: React.FC<{ children: React.ReactNode }> = ({ childre
   // Track all major photos used on the website
   const [siteImages, setSiteImages] = useState<Record<string, string>>({
     'home-hero-bg': '/assets/source/images/rooftoprest.jpg',
-    'rooftop-bg': '/assets/source/images/rooftoprest.jpg',
+    'rooftop-bg': 'https://images.unsplash.com/photo-1514933651103-005eec06c04b?q=80&w=1920&auto=format&fit=crop',
     'story-hero-bg': 'https://images.unsplash.com/photo-1509440159596-0249088772ff?q=80&w=1200&auto=format&fit=crop',
     'story-era-1': 'https://images.unsplash.com/photo-1509440159596-0249088772ff?q=80&w=1200&auto=format&fit=crop',
     'story-era-2': 'https://images.unsplash.com/photo-1414235077428-338989a2e8c0?q=80&w=1200&auto=format&fit=crop',

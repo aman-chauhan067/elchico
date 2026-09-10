@@ -25,10 +25,10 @@ export const story = [
     title: 'The First Catering',
     year: '1964',
     description: 'El Chico proudly partnered with the growth of the city. The first outdoor catering managed by El Chico was to host Mr. JD Birla at the stone laying of Hindalco in 1964.',
-    image: 'https://images.unsplash.com/photo-1414235077428-338989a2e8c0?q=80&w=1200&auto=format&fit=crop', // Fine dining vibe
-    bgColor: 'var(--color-pistachio)',
-    textColor: 'var(--color-cocoa)',
-    accentColor: 'var(--color-cherry)'
+    image: 'https://images.unsplash.com/photo-1414235077428-338989a2e8c0?q=80&w=1200&auto=format&fit=crop', // Fine dining / historic look
+    bgColor: '#87CEEB',
+    textColor: '#191970',
+    accentColor: '#191970'
   },
   {
     id: 'era-1965',
