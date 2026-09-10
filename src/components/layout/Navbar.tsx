@@ -4,6 +4,8 @@ import { FaFacebook, FaInstagram } from 'react-icons/fa';
 import styles from './Navbar.module.css';
 import { Button } from '../ui/Button';
 
+import logoImage from '../../assets/logo.webp';
+
 export const Navbar: React.FC = () => {
   const [isScrolled, setIsScrolled] = useState(false);
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
@@ -44,8 +46,8 @@ export const Navbar: React.FC = () => {
   return (
     <header className={`${styles.header} ${isScrolled ? styles.scrolled : ''}`}>
       <div className={`container ${styles.navContainer}`}>
-        <Link to="/" className={styles.logo}>
-          EL CHICO
+        <Link to="/" className={styles.logo} style={{ display: 'flex', alignItems: 'center' }}>
+          <img src={logoImage} alt="El Chico Logo" style={{ height: '48px', width: 'auto' }} />
         </Link>
 
         {/* Desktop Nav */}

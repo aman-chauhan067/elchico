@@ -5,6 +5,7 @@ import styles from './Footer.module.css';
 import { sourceBrand } from '../../data/source/brand';
 import { sourceContact } from '../../data/source/contact';
 import { HeartIllustration } from '../illustrations';
+import logoImage from '../../assets/logo.webp';
 
 export const Footer: React.FC = () => {
   const verifiedPhone = sourceContact.phones.find(p => p.verified)?.number;
@@ -15,7 +16,9 @@ export const Footer: React.FC = () => {
         
         <div className={styles.topSection}>
           <div className={styles.brandCol}>
-            <h3 className={styles.logo}>{sourceBrand.name}</h3>
+            <Link to="/" style={{ display: 'inline-block', marginBottom: '1rem' }}>
+              <img src={logoImage} alt="El Chico Logo" style={{ height: '80px', width: 'auto' }} />
+            </Link>
             <p className={styles.tagline}>{sourceBrand.tagline}</p>
             <p className={styles.since}>Since {sourceBrand.establishedYear}</p>
           </div>
