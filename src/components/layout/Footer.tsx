@@ -17,7 +17,7 @@ export const Footer: React.FC = () => {
         <div className={styles.topSection}>
           <div className={styles.brandCol}>
             <Link to="/" style={{ display: 'inline-block', marginBottom: '1rem' }}>
-              <img src={logoImage} alt="El Chico Logo" style={{ height: '80px', width: 'auto' }} />
+              <img src={logoImage} alt="El Chico Logo" style={{ height: '140px', width: 'auto' }} />
             </Link>
             <p className={styles.tagline}>{sourceBrand.tagline}</p>
             <p className={styles.since}>Since {sourceBrand.establishedYear}</p>

@@ -47,7 +47,7 @@ export const Navbar: React.FC = () => {
     <header className={`${styles.header} ${isScrolled ? styles.scrolled : ''}`}>
       <div className={`container ${styles.navContainer}`}>
         <Link to="/" className={styles.logo} style={{ display: 'flex', alignItems: 'center' }}>
-          <img src={logoImage} alt="El Chico Logo" style={{ height: '48px', width: 'auto' }} />
+          <img src={logoImage} alt="El Chico Logo" style={{ height: '70px', width: 'auto', transform: 'scale(1.2)' }} />
         </Link>
 
         {/* Desktop Nav */}
