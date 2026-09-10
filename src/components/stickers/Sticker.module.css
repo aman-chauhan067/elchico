@@ -1,0 +1,94 @@
+.wrapper {
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  transform-origin: center;
+  /* Apply the prop rotation */
+  transform: rotate(calc(var(--rotation, 0) * 1deg));
+  /* Smooth transition for hover effects */
+  transition: transform 0.4s var(--ease-bounce), box-shadow 0.4s var(--ease-slide);
+  will-change: transform, box-shadow;
+}
+
+.wrapper:hover {
+  /* Gently scale and add 2 degrees of rotation */
+  transform: rotate(calc((var(--rotation, 0) + 2) * 1deg)) scale(1.02);
+  z-index: var(--z-above);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .wrapper {
+    transition: none;
+  }
+  .wrapper:hover {
+    transform: rotate(calc(var(--rotation, 0) * 1deg));
+  }
+}
+
+.sticker {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: var(--space-2);
+  padding: var(--space-2) var(--space-4);
+  border-radius: var(--radius-full);
+  font-family: var(--font-accent);
+  font-weight: 600;
+  color: var(--color-cocoa);
+  box-shadow: var(--shadow-sm);
+  transform: rotate(var(--sticker-rotation, 0deg));
+  transition: transform var(--duration-normal) var(--ease-bounce), box-shadow var(--duration-normal) var(--ease-standard);
+  cursor: default;
+  user-select: none;
+  /* Scalloped edge effect simulation using pseudo elements or just a cute border */
+  border: 1.5px dashed rgba(59, 41, 37, 0.15); /* Slightly stronger for paper feel */
+  background-clip: padding-box;
+}
+
+.sticker:hover {
+  box-shadow: var(--shadow-sticker);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .sticker {
+    transition: none;
+  }
+  .sticker:hover {
+    transform: rotate(var(--sticker-rotation, 0deg));
+  }
+}
+
+.text {
+  letter-spacing: 0.02em;
+}
+
+.icon {
+  display: inline-flex;
+  align-items: center;
+}
+
+/* Sizes */
+.size-sm {
+  font-size: var(--text-sm);
+  padding: var(--space-1) var(--space-3);
+}
+
+.size-md {
+  font-size: var(--text-lg);
+  padding: var(--space-2) var(--space-4);
+}
+
+.size-lg {
+  font-size: var(--text-2xl);
+  padding: var(--space-3) var(--space-6);
+}
+
+/* Variants */
+.variant-strawberry { background-color: var(--color-strawberry); }
+.variant-butter { background-color: var(--color-butter); }
+.variant-mint { background-color: var(--color-mint); }
+.variant-sky { background-color: var(--color-sky); }
+.variant-lavender { background-color: var(--color-lavender); }
+.variant-peach { background-color: var(--color-peach); }
+.variant-cream { background-color: var(--color-cream); }

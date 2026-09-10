@@ -1,0 +1,92 @@
+.section {
+  position: relative;
+  padding-block: var(--space-32);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 70vh;
+  overflow: hidden;
+}
+
+.background {
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+}
+
+.image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.overlay {
+  position: absolute;
+  inset: 0;
+  /* Slightly darker, warmer overlay */
+  background: linear-gradient(
+    to bottom,
+    rgba(59, 41, 37, 0.4),
+    rgba(59, 41, 37, 0.7)
+  );
+}
+
+.container {
+  position: relative;
+  z-index: var(--z-normal);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+}
+
+.content {
+  background-color: var(--color-paper);
+  padding: var(--space-8) var(--space-6);
+  border-radius: var(--radius-xl);
+  box-shadow: var(--shadow-lg);
+  max-width: 600px;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  position: relative;
+}
+
+@media (min-width: 768px) {
+  .content {
+    padding: var(--space-12) var(--space-8);
+  }
+}
+
+.stickerWrapper {
+  position: absolute;
+  top: -15px;
+  z-index: var(--z-above);
+}
+
+.title {
+  font-family: var(--font-display);
+  font-size: clamp(var(--text-2xl), 5vw, var(--text-hero));
+  color: var(--color-cocoa);
+  margin-bottom: var(--space-2);
+}
+
+.subtitle {
+  font-family: var(--font-accent);
+  font-size: var(--text-2xl);
+  color: var(--color-strawberry);
+  margin-bottom: var(--space-8);
+}
+
+.actions {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: var(--space-4);
+}
+
+/* Specific styling for the outline button on paper surface */
+.visitBtn {
+  border-color: var(--color-cocoa);
+}

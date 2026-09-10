@@ -1,0 +1,84 @@
+.section {
+  padding-block: var(--space-20);
+  background-color: var(--color-vanilla);
+}
+
+.container {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-16);
+}
+
+.timeline {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-12);
+  align-items: center;
+  position: relative;
+}
+
+/* Vertical line for tablet */
+.timeline::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 50%;
+  width: 2px;
+  background-color: var(--color-strawberry);
+  opacity: 0.3;
+  transform: translateX(-50%);
+}
+
+.milestone {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: var(--space-8);
+  width: 100%;
+  align-items: center;
+  position: relative;
+}
+
+/* Alternating sides */
+.milestone:nth-child(odd) .yearNode {
+  grid-column: 1 / 2;
+  text-align: right;
+  padding-right: var(--space-8);
+}
+.milestone:nth-child(odd) .content {
+  grid-column: 2 / 3;
+  text-align: left;
+}
+
+.milestone:nth-child(even) .yearNode {
+  grid-column: 2 / 3;
+  text-align: left;
+  padding-left: var(--space-8);
+}
+.milestone:nth-child(even) .content {
+  grid-column: 1 / 2;
+  grid-row: 1 / 2;
+  text-align: right;
+}
+
+.yearText {
+  font-family: var(--font-display);
+  font-size: var(--text-4xl);
+  color: var(--color-strawberry);
+  background: var(--color-vanilla); /* break the line visually */
+  padding-block: var(--space-2);
+}
+
+.title {
+  font-family: var(--font-display);
+  font-size: var(--text-2xl);
+  color: var(--color-cocoa);
+  margin-bottom: var(--space-2);
+}
+
+.desc {
+  font-family: var(--font-body);
+  font-size: var(--text-base);
+  color: var(--color-cocoa);
+  opacity: 0.8;
+}

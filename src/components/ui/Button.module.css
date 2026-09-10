@@ -1,0 +1,89 @@
+.celebrationWrapper {
+  position: relative;
+  isolation: isolate;
+  display: inline-flex;
+}
+
+.celebrationButton {
+  position: relative;
+  z-index: 2;
+}
+
+.button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: var(--space-2);
+  border-radius: var(--radius-full);
+  font-weight: 500;
+  transition: all var(--duration-fast) var(--ease-slide);
+  text-decoration: none;
+  font-family: var(--font-body);
+  will-change: transform, box-shadow, background-color;
+}
+
+.button:hover {
+  transform: translateY(-2px);
+}
+
+.button:active {
+  transform: translateY(0) scale(0.98);
+}
+
+.button:disabled {
+  opacity: 0.5;
+  pointer-events: none;
+}
+
+/* Sizes */
+.size-sm {
+  padding: var(--space-2) var(--space-4);
+  font-size: var(--text-sm);
+}
+.size-md {
+  padding: var(--space-3) var(--space-6);
+  font-size: var(--text-base);
+}
+.size-lg {
+  padding: var(--space-4) var(--space-8);
+  font-size: var(--text-lg);
+}
+
+/* Variants */
+.variant-primary {
+  background-color: var(--color-cocoa);
+  color: var(--color-cream);
+}
+.variant-primary:hover {
+  background-color: #2a1d1a; /* Darker cocoa */
+  box-shadow: var(--shadow-md);
+}
+
+.variant-secondary {
+  background-color: var(--color-strawberry);
+  color: var(--color-cocoa);
+}
+.variant-secondary:hover {
+  background-color: #e696a6;
+  box-shadow: var(--shadow-md);
+}
+
+.variant-outline {
+  background-color: transparent;
+  color: var(--color-cocoa);
+  border: 1.5px solid var(--color-cocoa);
+}
+.variant-outline:hover {
+  background-color: var(--color-paper);
+}
+
+.variant-text {
+  background-color: transparent;
+  color: var(--color-cocoa);
+  padding-inline: var(--space-2);
+}
+.variant-text:hover {
+  text-decoration: underline;
+  text-decoration-thickness: 1.5px;
+  text-underline-offset: 4px;
+}

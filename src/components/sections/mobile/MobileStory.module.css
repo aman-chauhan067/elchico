@@ -1,0 +1,52 @@
+.section {
+  padding-block: var(--space-12);
+  background-color: var(--color-vanilla);
+}
+
+.container {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-8);
+}
+
+.stack {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-4);
+}
+
+.card {
+  display: flex;
+  flex-direction: column;
+  background-color: var(--color-paper);
+  padding: var(--space-6);
+  border-radius: var(--radius-lg);
+  box-shadow: var(--shadow-sm);
+}
+
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: var(--space-2);
+}
+
+.yearText {
+  font-family: var(--font-display);
+  font-size: var(--text-3xl);
+  color: var(--color-strawberry);
+}
+
+.title {
+  font-family: var(--font-display);
+  font-size: var(--text-xl);
+  color: var(--color-cocoa);
+  margin-bottom: var(--space-1);
+}
+
+.desc {
+  font-family: var(--font-body);
+  font-size: var(--text-base);
+  color: var(--color-cocoa);
+  opacity: 0.85;
+}

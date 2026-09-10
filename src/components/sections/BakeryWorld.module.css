@@ -1,0 +1,129 @@
+.section {
+  padding-block: var(--space-24);
+  background-color: var(--color-cream);
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: var(--space-12);
+}
+
+@media (min-width: 768px) {
+  .grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: var(--space-8);
+  }
+}
+
+.cardWrapper {
+  display: block;
+}
+
+.card {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-6);
+  text-decoration: none;
+  color: inherit;
+  group: true;
+}
+
+.imageContainer {
+  position: relative;
+  border-radius: var(--radius-lg);
+  overflow: visible; /* Let stickers hang */
+}
+
+/* Scrapbook photo frame effect */
+.imageContainer::before {
+  content: '';
+  position: absolute;
+  inset: -12px -8px;
+  background-color: var(--color-vanilla);
+  border-radius: var(--radius-sm);
+  z-index: -1;
+  transform: rotate(-1deg);
+  transition: transform var(--duration-normal) var(--ease-standard);
+}
+
+.card:hover .imageContainer::before {
+  transform: rotate(1deg) scale(1.02);
+}
+
+.image {
+  width: 100%;
+  aspect-ratio: 4/3;
+  object-fit: cover;
+  border-radius: var(--radius-sm);
+  box-shadow: var(--shadow-md);
+  transition: transform var(--duration-normal) var(--ease-standard);
+}
+
+.card:hover .image {
+  transform: scale(1.02);
+}
+
+.stickerWrapper {
+  position: absolute;
+  top: -15px;
+  right: -15px;
+  z-index: var(--z-above);
+  transition: transform var(--duration-normal) var(--ease-bounce);
+}
+
+.card:hover .stickerWrapper {
+  transform: scale(1.1) rotate(5deg);
+}
+
+.content {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  padding-inline: var(--space-2);
+}
+
+.title {
+  font-family: var(--font-display);
+  font-size: var(--text-3xl);
+  margin-bottom: var(--space-2);
+}
+
+.description {
+  font-size: var(--text-lg);
+  color: var(--color-cocoa);
+  opacity: 0.8;
+  margin-bottom: var(--space-4);
+}
+
+.cta {
+  font-family: var(--font-accent);
+  font-size: var(--text-xl);
+  color: var(--color-cocoa);
+  position: relative;
+}
+
+.cta::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 0%;
+  height: 2px;
+  background-color: var(--color-cocoa);
+  transition: width var(--duration-normal) var(--ease-standard);
+}
+
+.card:hover .cta::after {
+  width: 100%;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .card:hover .imageContainer::before,
+  .card:hover .image,
+  .card:hover .stickerWrapper,
+  .card:hover .cta::after {
+    transform: none;
+    width: 0;
+  }
+}

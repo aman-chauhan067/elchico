@@ -1,0 +1,228 @@
+.page {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  background-color: var(--color-strawberry); /* Poppy pink */
+}
+
+.main {
+  flex: 1;
+}
+
+/* ================================================== */
+/* POP HERO SECTION */
+/* ================================================== */
+.hero {
+  position: relative;
+  min-height: 100vh;
+  background-color: transparent;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0;
+  overflow: hidden;
+}
+
+.heroContainer {
+  position: relative;
+  z-index: 2;
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding-inline: var(--space-12);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+}
+
+.titleStack {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 2rem;
+  margin-bottom: 0;
+}
+
+.heroEyebrow {
+  font-family: var(--font-accent);
+  font-size: clamp(2.5rem, 4vw, 3.5rem);
+  color: var(--color-cocoa); 
+  transform: rotate(-3deg) translateY(10px);
+  margin-bottom: var(--space-2);
+  display: inline-block;
+}
+
+.giantTitle {
+  font-family: var(--font-display);
+  font-size: clamp(4.5rem, 11vw, 13rem);
+  line-height: 0.85;
+  color: var(--color-cream);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  letter-spacing: -0.02em;
+  position: relative;
+  z-index: 5;
+}
+
+.titleRow {
+  display: block;
+}
+
+.handwritten {
+  font-family: var(--font-accent);
+  font-size: clamp(6.5rem, 15vw, 17rem);
+  color: var(--color-cocoa);
+  text-transform: lowercase;
+  display: inline-block;
+  transform: rotate(-6deg) translateY(-25px);
+  padding-inline: var(--space-2);
+  margin-bottom: -30px;
+}
+
+.heroSubtext {
+  font-family: var(--font-body);
+  font-size: var(--text-2xl);
+  color: var(--color-cream);
+  max-width: 50ch;
+  line-height: 1.5;
+  margin: 0 auto;
+  opacity: 0.9;
+}
+
+/* ================================================== */
+/* GALLERY GRID (Collage Layout) */
+/* ================================================== */
+.gallerySection {
+  padding: var(--space-24) 0;
+  background-color: transparent;
+}
+
+.container {
+  max-width: 1400px;
+  margin: 0 auto;
+  padding-inline: var(--space-12);
+}
+
+/* Bento Grid */
+.galleryGrid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-auto-rows: 350px; /* Use explicit height for perfect flex rendering */
+  grid-auto-flow: dense;
+  gap: var(--space-12);
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+@media (min-width: 768px) {
+  .galleryGrid {
+    grid-auto-rows: 450px;
+  }
+}
+
+.bentoWrapper {
+  width: 100%;
+  height: 100%;
+  position: relative;
+  transition: transform 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+.bentoWrapper:hover {
+  transform: scale(1.05) rotate(0deg) !important;
+  z-index: 20;
+}
+
+.bentoItem {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  border-radius: 4px;
+  background: white;
+  padding: 12px;
+  box-shadow: 2px 4px 15px rgba(0, 0, 0, 0.08);
+  border: 1px solid rgba(0, 0, 0, 0.05);
+  transition: all 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+  display: flex;
+  flex-direction: column;
+}
+
+.stickyNoteItem {
+  border-radius: 1px; /* Sharp corners for paper */
+  box-shadow: 2px 5px 15px rgba(0, 0, 0, 0.1), inset 0 0 40px rgba(0,0,0,0.03); /* Physical drop shadow */
+  border: none;
+  flex-direction: row; /* Override column */
+  padding: 0;
+}
+
+.bentoWrapper:hover .bentoItem {
+  box-shadow: 5px 15px 30px rgba(0, 0, 0, 0.15);
+}
+
+.bentoImage {
+  width: 100%;
+  flex: 1; /* Takes all remaining space */
+  min-height: 0; /* Allows shrinking in flex context */
+  object-fit: cover;
+  transition: transform 0.6s ease;
+  border-radius: 2px;
+}
+
+.bentoWrapper:hover .bentoImage {
+  transform: scale(1.02);
+}
+
+.bentoOverlay {
+  height: 50px;
+  flex-shrink: 0; /* Prevents height from collapsing */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: white;
+  pointer-events: none;
+}
+
+.bentoLabel {
+  font-family: var(--font-accent);
+  font-size: var(--text-xl);
+  color: var(--color-strawberry);
+  text-transform: lowercase;
+  transform: translateY(10px);
+  transition: transform 0.4s ease;
+}
+
+.bentoWrapper:hover .bentoLabel {
+  transform: translateY(0);
+}
+
+.bentoText {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  padding: var(--space-6);
+  font-family: var(--font-accent);
+  font-size: clamp(3rem, 5vw, 4.5rem);
+  color: var(--color-cocoa);
+  line-height: 1.1;
+  position: relative;
+}
+
+/* Masking Tape effect */
+.bentoText::before {
+  content: '';
+  position: absolute;
+  top: -15px; /* Moved slightly higher to tape the note to the wall */
+  left: 50%;
+  transform: translateX(-50%) rotate(-4deg);
+  width: 110px;
+  height: 35px;
+  background-color: rgba(255, 255, 255, 0.7); /* More opaque for realistic tape */
+  backdrop-filter: blur(4px);
+  border: 1px solid rgba(0, 0, 0, 0.05);
+  box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+  z-index: 5;
+}

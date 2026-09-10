@@ -1,0 +1,66 @@
+.section {
+  padding-block: var(--space-12);
+  background-color: var(--color-cream);
+}
+
+.container {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-6);
+}
+
+.yearBadge {
+  margin-bottom: var(--space-2);
+}
+
+.year {
+  font-family: var(--font-display);
+  font-size: 5rem;
+  color: var(--color-vanilla);
+  -webkit-text-stroke: 1px var(--color-strawberry);
+  line-height: 0.8;
+}
+
+.heading {
+  font-family: var(--font-display);
+  font-size: var(--text-2xl);
+  color: var(--color-cocoa);
+  line-height: 1.15;
+  margin-bottom: var(--space-2);
+}
+
+.imageWrapper {
+  border-radius: var(--radius-lg);
+  padding: 6px;
+  background-color: var(--color-paper);
+  box-shadow: var(--shadow-sm);
+  margin-block: var(--space-2);
+}
+
+.image {
+  width: 100%;
+  height: 250px;
+  object-fit: cover;
+  border-radius: var(--radius-sm);
+}
+
+.textBlock {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-4);
+}
+
+.paragraph {
+  font-family: var(--font-body);
+  font-size: var(--text-base);
+  color: var(--color-cocoa);
+  line-height: 1.5;
+}
+
+.handwritten {
+  font-family: var(--font-accent);
+  font-size: var(--text-xl);
+  color: var(--color-strawberry);
+  transform: rotate(-2deg);
+  align-self: flex-end;
+}

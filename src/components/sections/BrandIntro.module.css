@@ -1,0 +1,70 @@
+.intro {
+  padding-block: var(--space-24);
+  background-color: var(--color-paper);
+  position: relative;
+  /* subtle top border resembling torn paper */
+  border-top: 2px dashed rgba(59, 41, 37, 0.05);
+}
+
+.container {
+  display: flex;
+  justify-content: center;
+}
+
+.textWrapper {
+  max-width: 800px;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  position: relative;
+}
+
+.ornament {
+  margin-bottom: var(--space-6);
+  opacity: 0.8;
+}
+
+.title {
+  font-family: var(--font-display);
+  font-size: var(--text-3xl);
+  color: var(--color-cocoa);
+  margin-bottom: var(--space-6);
+}
+
+@media (min-width: 768px) {
+  .title {
+    font-size: var(--text-hero);
+  }
+}
+
+.description {
+  font-size: var(--text-xl);
+  line-height: 1.6;
+  color: var(--color-cocoa);
+  opacity: 0.9;
+  margin-bottom: var(--space-8);
+}
+
+@media (min-width: 768px) {
+  .description {
+    font-size: var(--text-2xl);
+  }
+}
+
+.note {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--space-3);
+  font-size: var(--text-2xl);
+  color: var(--color-cocoa);
+  transform: rotate(-2deg);
+  background-color: var(--color-vanilla);
+  padding: var(--space-2) var(--space-4);
+  border-radius: var(--radius-sm);
+  box-shadow: var(--shadow-sm);
+}
+
+.heart {
+  display: block;
+}

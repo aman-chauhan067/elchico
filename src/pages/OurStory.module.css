@@ -1,0 +1,251 @@
+.page {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+.main {
+  flex: 1;
+  width: 100%;
+}
+
+/* ================================================== */
+/* POP HERO SECTION */
+/* ================================================== */
+.hero {
+  position: relative;
+  min-height: 100vh;
+  background-color: var(--color-paper);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0;
+  overflow: hidden;
+}
+
+.heroContainer {
+  position: relative;
+  z-index: 2;
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding-inline: var(--space-12);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+}
+
+.titleStack {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-bottom: var(--space-8);
+  margin-top: 15vh;
+}
+
+.heroEyebrow {
+  font-family: var(--font-accent);
+  font-size: clamp(2.5rem, 4vw, 3.5rem);
+  color: var(--color-strawberry);
+  transform: rotate(-3deg) translateY(10px); /* Moves it slightly lower */
+  margin-bottom: var(--space-2); /* Reduced from space-6 to close the gap */
+  display: inline-block;
+}
+
+.giantTitle {
+  font-family: var(--font-display);
+  font-size: clamp(4.5rem, 11vw, 13rem);
+  line-height: 0.9;
+  color: var(--color-cocoa);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  letter-spacing: -0.02em;
+}
+
+.titleRow {
+  display: block;
+}
+
+.handwritten {
+  font-family: var(--font-accent);
+  font-size: clamp(6rem, 13vw, 15rem);
+  color: var(--color-pistachio);
+  text-transform: lowercase;
+  display: inline-block;
+  transform: rotate(-6deg) translateY(-10px);
+  padding-inline: var(--space-2);
+}
+
+.heroSubtext {
+  font-family: var(--font-body);
+  font-size: var(--text-2xl);
+  color: var(--color-cocoa);
+  max-width: 50ch;
+  line-height: 1.5;
+  margin: 0 auto;
+  opacity: 0.9;
+}
+
+
+/* ================================================== */
+/* TIMELINE GRID */
+/* ================================================== */
+.timelineSection {
+  display: flex;
+  flex-direction: column;
+}
+
+.eraPanel {
+  position: relative;
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  padding-block: var(--space-32);
+  transition: background-color 0.6s ease;
+}
+
+.eraContainer {
+  width: 100%;
+  max-width: 1400px;
+  margin: 0 auto;
+  padding-inline: var(--space-12);
+  display: grid;
+  grid-template-columns: 4fr 6fr;
+  gap: var(--space-24);
+  align-items: flex-start;
+}
+
+.eraStickyCol {
+  position: sticky;
+  top: 30vh; /* Sticks a bit below the top */
+}
+
+.eraYear {
+  font-family: var(--font-display);
+  font-size: clamp(8rem, 15vw, 18rem);
+  line-height: 0.8;
+  letter-spacing: -0.04em;
+  opacity: 0.9;
+  text-shadow: 2px 2px 0 rgba(0,0,0,0.05);
+}
+
+.eraContentCol {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-12);
+  padding-top: 15vh; /* offset content slightly */
+}
+
+.eraImageWrapper {
+  width: 100%;
+  border-radius: var(--radius-lg);
+  overflow: hidden;
+  box-shadow: var(--shadow-2xl);
+}
+
+.eraImage {
+  width: 100%;
+  height: 60vh;
+  object-fit: cover;
+  transition: transform 0.6s ease;
+}
+
+.eraImageWrapper:hover .eraImage {
+  transform: scale(1.05);
+}
+
+.eraText {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-6);
+  max-width: 550px;
+}
+
+.eraTitle {
+  font-family: var(--font-display);
+  font-size: clamp(3rem, 5vw, 5rem);
+  line-height: 1;
+}
+
+.eraDescription {
+  font-family: var(--font-body);
+  font-size: var(--text-xl);
+  line-height: 1.6;
+  opacity: 0.85;
+}
+
+
+/* ================================================== */
+/* CLOSING MARQUEE BANNER */
+/* ================================================== */
+.closingBanner {
+  background-color: var(--color-strawberry);
+  padding-block: var(--space-4); /* Thinner */
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+}
+
+.marquee {
+  width: 100%;
+  white-space: nowrap;
+  overflow: hidden;
+}
+
+.marqueeTrack {
+  display: flex;
+  width: max-content;
+  animation: marquee 20s linear infinite;
+  font-family: var(--font-display);
+  font-size: var(--text-2xl); /* Slightly smaller to match thinner banner */
+  color: var(--color-paper);
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
+@keyframes marquee {
+  0% { transform: translateX(0); }
+  100% { transform: translateX(-50%); }
+}
+
+
+/* ================================================== */
+/* RESPONSIVE DESIGN */
+/* ================================================== */
+@media (max-width: 1024px) {
+  .eraContainer {
+    grid-template-columns: 1fr;
+    gap: var(--space-12);
+  }
+
+  .eraStickyCol {
+    position: relative;
+    top: 0;
+  }
+  
+  .eraContentCol {
+    padding-top: 0;
+  }
+  
+  .eraYear {
+    font-size: clamp(6rem, 20vw, 12rem);
+  }
+}
+
+@media (max-width: 768px) {
+  .hero {
+    min-height: 70vh;
+    padding-block: var(--space-24) var(--space-16);
+  }
+  
+  .eraPanel {
+    min-height: auto;
+    padding-block: var(--space-16);
+  }
+  
+  .eraImage {
+    height: 40vh;
+  }
+}

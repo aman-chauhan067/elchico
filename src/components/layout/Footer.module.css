@@ -1,0 +1,130 @@
+.footer {
+  background-color: var(--color-paper);
+  padding-block: var(--space-16) var(--space-8);
+  border-top: 2px dashed rgba(59, 41, 37, 0.1);
+  position: relative;
+  overflow: hidden;
+}
+
+.container {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-12);
+}
+
+.topSection {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: var(--space-8);
+}
+
+@media (min-width: 768px) {
+  .topSection {
+    grid-template-columns: 2fr 1fr 1fr 1.5fr;
+  }
+}
+
+.logo {
+  font-family: var(--font-display);
+  font-size: clamp(3rem, 5vw, 4.5rem);
+  font-weight: 400;
+  margin-bottom: var(--space-2);
+  line-height: 1;
+}
+
+.tagline {
+  font-family: var(--font-accent);
+  font-size: var(--text-4xl);
+  color: var(--color-strawberry);
+  margin-bottom: var(--space-4);
+  transform: rotate(-3deg);
+  display: block;
+}
+
+.since {
+  font-size: var(--text-sm);
+  opacity: 0.7;
+}
+
+.heading {
+  font-family: var(--font-display);
+  font-size: var(--text-xl);
+  margin-bottom: var(--space-4);
+  font-weight: 400;
+}
+
+.list {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-3);
+}
+
+.list a {
+  opacity: 0.8;
+  transition: opacity var(--duration-fast);
+}
+
+.list a:hover {
+  opacity: 1;
+  text-decoration: underline;
+  text-underline-offset: 4px;
+}
+
+.socials {
+  display: flex;
+  gap: var(--space-4);
+  margin-top: var(--space-2);
+}
+
+.bottomSection {
+  border-top: 1px solid rgba(59, 41, 37, 0.1);
+  padding-top: var(--space-8);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: var(--space-4);
+}
+
+@media (min-width: 768px) {
+  .bottomSection {
+    flex-direction: row;
+    justify-content: space-between;
+  }
+}
+
+.copyright {
+  font-family: var(--font-body);
+  font-size: var(--text-sm);
+  color: var(--color-cocoa);
+  opacity: 0.6;
+}
+
+.signoff {
+  display: flex;
+  align-items: center;
+  gap: var(--space-2);
+}
+
+.handwritten {
+  font-family: var(--font-accent);
+  font-size: var(--text-xl);
+  color: var(--color-strawberry);
+  transform: rotate(-3deg);
+}
+
+.heart {
+  display: inline-block;
+  animation: float 3s ease-in-out infinite;
+  opacity: 0.8;
+}
+
+@keyframes float {
+  0% { transform: translateY(0); }
+  50% { transform: translateY(-3px); }
+  100% { transform: translateY(0); }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .heart { animation: none; }
+}

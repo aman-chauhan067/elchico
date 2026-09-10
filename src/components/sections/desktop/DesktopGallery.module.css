@@ -1,0 +1,117 @@
+.section {
+  padding-top: 8rem;
+  padding-bottom: 8rem;
+  background-color: var(--color-vanilla);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  position: relative;
+  z-index: 2;
+}
+
+.header {
+  text-align: center;
+  margin-bottom: var(--space-16);
+  z-index: 10;
+}
+
+.title {
+  font-family: var(--font-display);
+  font-size: clamp(3rem, 8vw, 6rem);
+  color: var(--color-strawberry);
+  line-height: 0.9;
+}
+
+.subtitle {
+  font-family: var(--font-accent);
+  font-size: var(--text-3xl);
+  color: var(--color-cocoa);
+  opacity: 0.7;
+  margin-top: var(--space-4);
+  transform: rotate(-2deg);
+}
+
+.viewportWrapper {
+  width: 95vw;
+  max-width: 1600px;
+  height: 85vh;
+  min-height: 700px;
+  max-height: 1000px;
+  position: relative;
+  border-radius: var(--radius-2xl);
+  
+  /* Smooth radial fade */
+  mask-image: radial-gradient(ellipse at center, rgba(0,0,0,1) 30%, rgba(0,0,0,0) 75%);
+  -webkit-mask-image: radial-gradient(ellipse at center, rgba(0,0,0,1) 30%, rgba(0,0,0,0) 75%);
+  
+  border: 1px solid rgba(59, 41, 37, 0.05);
+  box-shadow: inset 0 0 100px rgba(255, 255, 255, 0.5);
+  background-color: rgba(255, 255, 255, 0.2);
+}
+
+.viewport {
+  width: 100%;
+  height: 100%;
+  position: relative;
+  overflow: hidden;
+  cursor: grab;
+  will-change: transform;
+}
+
+.viewport:active {
+  cursor: grabbing;
+}
+
+.galleryItem {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform-origin: center center;
+  will-change: transform, opacity;
+  box-shadow: 0 30px 60px rgba(59, 41, 37, 0.15);
+  background-color: var(--color-vanilla);
+  display: flex;
+  flex-direction: column;
+}
+
+.image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  user-select: none;
+  pointer-events: none;
+}
+
+/* Borders and physical treatments */
+.frameNormal {
+  padding: 8px;
+  border: 1px solid rgba(0,0,0,0.05);
+  border-radius: var(--radius-sm);
+}
+
+.frameNormal .image {
+  border-radius: 2px;
+}
+
+.framePolaroid {
+  padding: 16px 16px 64px 16px;
+  border: 1px solid rgba(0,0,0,0.1);
+  background: var(--color-paper);
+}
+
+.frameSquare {
+  padding: 0;
+  border: 12px solid var(--color-cream);
+}
+
+.caption {
+  position: absolute;
+  bottom: 20px;
+  left: 0;
+  width: 100%;
+  text-align: center;
+  font-family: var(--font-accent);
+  font-size: var(--text-2xl);
+  color: var(--color-cocoa);
+  opacity: 0.8;
+}

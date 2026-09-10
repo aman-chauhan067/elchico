@@ -1,0 +1,94 @@
+.section {
+  padding-block: var(--space-24);
+  background-color: var(--color-vanilla);
+}
+
+.galleryGrid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  grid-auto-rows: 200px;
+  gap: var(--space-4);
+}
+
+@media (min-width: 768px) {
+  .galleryGrid {
+    grid-template-columns: repeat(3, 1fr);
+    grid-auto-rows: 250px;
+    gap: var(--space-6);
+  }
+}
+
+@media (min-width: 1024px) {
+  .galleryGrid {
+    grid-template-columns: repeat(4, 1fr);
+    grid-auto-rows: 300px;
+  }
+}
+
+.imageWrapper {
+  position: relative;
+  display: block;
+  border-radius: var(--radius-md);
+  padding: 8px; /* Polaroid/scrapbook white border effect */
+  background-color: var(--color-paper);
+  box-shadow: var(--shadow-md);
+  transform: rotate(calc(var(--rotation, 0deg)));
+  transition: transform var(--duration-normal) var(--ease-standard);
+}
+
+/* Pseudo-random rotations for scrapbook feel using nth-child */
+.imageWrapper:nth-child(1) { --rotation: -2deg; }
+.imageWrapper:nth-child(2) { --rotation: 1deg; }
+.imageWrapper:nth-child(3) { --rotation: -1deg; }
+.imageWrapper:nth-child(4) { --rotation: 2deg; }
+.imageWrapper:nth-child(5) { --rotation: -1.5deg; }
+
+.imageWrapper:hover {
+  transform: rotate(0deg) scale(1.05);
+  z-index: var(--z-above);
+  box-shadow: var(--shadow-lg);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .imageWrapper:hover {
+    transform: rotate(calc(var(--rotation, 0deg)));
+  }
+}
+
+.imageInner {
+  width: 100%;
+  height: 100%;
+  position: relative;
+  overflow: hidden;
+  border-radius: var(--radius-sm);
+}
+
+.image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.spanCol {
+  grid-column: span 1;
+  grid-row: span 2;
+}
+
+.spanRow {
+  grid-column: span 2;
+  grid-row: span 1;
+}
+
+@media (min-width: 768px) {
+  .spanRow {
+    grid-column: span 2;
+    grid-row: span 2;
+  }
+}
+
+.sticker {
+  position: absolute;
+  bottom: 10px;
+  right: 10px;
+  z-index: var(--z-normal);
+}
